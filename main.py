@@ -8,7 +8,7 @@ from trainingModel import trainModel
 from training_Validation_Insertion import train_validation
 import flask_monitoringdashboard as dashboard
 from predictFromModel import prediction
-import uvicorn
+import gunicorn
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
@@ -92,6 +92,6 @@ def trainRouteClient():
 
 
 if __name__ == "__main__":
-    config = uvicorn.Config("main:app", port=5000, log_level="info")
-    server = uvicorn.Server(config)
+    config = gunicorn.Config("main:app", port=5000, log_level="info")
+    server = gunicorn.Server(config)
     server.run()
