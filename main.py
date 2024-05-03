@@ -8,7 +8,7 @@ from trainingModel import trainModel
 from training_Validation_Insertion import train_validation
 import flask_monitoringdashboard as dashboard
 from predictFromModel import prediction
-import gunicorn
+
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
@@ -91,7 +91,6 @@ def trainRouteClient():
     return Response("Training successfull!!")
 
 
+port = int(os.getenv("PORT",5001))
 if __name__ == "__main__":
-    config = gunicorn.Config("main:app", port=5000, log_level="info")
-    server = gunicorn.Server(config)
-    server.run()
+    app.run(port=port,debug=True)
