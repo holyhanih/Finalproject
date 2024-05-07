@@ -91,7 +91,8 @@ class Prediction_Data_validation:
                                       Revisions: None
 
                                               """
-        regex = "['fraudDetection']+['\_'']+[\d_]+[\d]+\.csv"
+        regex = r"['fraudDetection']+['_']+[\d_]+[\d]+\.csv"
+
         return regex
 
     def createDirectoryForGoodBadRawData(self):
