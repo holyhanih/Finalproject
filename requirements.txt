@@ -22,6 +22,7 @@ SQLAlchemy==2.0.29
 typing_extensions==4.11.0
 tzlocal==2.0.0
 urllib3==2.2.1
-Werkzeug==3.0.2
+Werkzeug==3.0.3
 gunicorn==20.1.0
+python==3.12.3
 
